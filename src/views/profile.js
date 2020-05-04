@@ -53,9 +53,11 @@ export function renderProfileView(myData) {
  <div class="container">
 
      <div  id="interest">${myData.interests}</div>
+
+<div class= "centerItem">
            <button class = "button is-rounded btnIcon  is-outlined is-primary" id="editProfile" >
       <span class="icon is-small"><i class="fas fa-pencil-alt"></i></span></button>
-    
+    </div>
 
     <textarea  class = "ocultEditProfile" id="interestsProfile" maxlength="200">${myData.interests}</textarea>
     
