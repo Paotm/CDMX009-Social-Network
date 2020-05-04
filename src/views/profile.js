@@ -41,11 +41,15 @@ export function renderProfileView(myData) {
     <div id="interest">${myData.interests}</div>
     <textarea  class = "ocultEditProfile" id="interestsProfile" maxlength="200">${myData.interests}</textarea>
     
-    <textarea class = "ocultEditProfile" id="interestsProfile" maxlength="200">${myData.interests}</textarea>
+
+    <textarea  class = "ocultEditProfile" id="interestsProfile" maxlength="200">${myData.interests}</textarea>
     
+       
     
-    <button class = "button is-rounded btnIcon ocultEditProfile" id="saveProfile" >Guardar</button>
+    <button class = "button is-rounded  is-outlined is-primary btnIcon ocultEditProfile" id="saveProfile" >Guardar</button>
     <button class = "button is-rounded btnIcon ocultEditProfile" id="cancelEdit">Cancelar</button>
+</div>
+
 
     <div class="modal" id="saveChange">
     <div class="modal-background"></div>
