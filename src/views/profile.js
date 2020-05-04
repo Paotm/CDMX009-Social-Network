@@ -29,34 +29,42 @@ export function renderProfileView(myData) {
   if (myData) {
     const profile =
        `
-  <div>
+  
+  
+       
     <h1 class="title has-text-centered has-text-grey-lighter title is-8" id="nameProfile">
      ${myData.name}
      </h1>
-  <div>
-
+  
+  <div id="changeImage">
   <figure class='image container is-128x128'>
-       <div id="changeImage">
-         <img id="thisPhoto" src="${myData.photo}" class="is-rounded">
-       </div>
+     <img id="thisPhoto" src="${myData.photo}" class="is-rounded">
   </figure>
-       <div id="photoProfile"></div>
+  </div>
+       <div id="photoProfile">
        <input class = "ocultEditProfile" type="file" accept="image/*" id="file">
+       </div>
+
        
   <h2 class="title has-text-centered has-text-grey-lighter title is-4" id="emailProfile">
        ${myData.email}
   </h2>
   
+ <div class="container">
+
      <div  id="interest">${myData.interests}</div>
-      <button class = "button is-rounded btnIcon  is-outlined is-primary" id="editProfile" ><span class="icon is-small"><i class="fas fa-pencil-alt"></i></span></button>
-     
+           <button class = "button is-rounded btnIcon  is-outlined is-primary" id="editProfile" >
+      <span class="icon is-small"><i class="fas fa-pencil-alt"></i></span></button>
+    
+
     <textarea  class = "ocultEditProfile" id="interestsProfile" maxlength="200">${myData.interests}</textarea>
     
-    
-    
+       
     
     <button class = "button is-rounded  is-outlined is-primary btnIcon ocultEditProfile" id="saveProfile" >Guardar</button>
     <button class = "button is-rounded btnIcon ocultEditProfile" id="cancelEdit">Cancelar</button>
+</div>
+
 
     <div class="modal" id="saveChange">
     <div class="modal-background"></div>
