@@ -42,7 +42,7 @@ export function renderProfileView(myData) {
             </div>
             <div class= "centerItem">   
             <div id="photoProfile">
-            <input class = "ocultEditProfile" type="file" accept="image/*" id="file">
+            <input class = "ocultEditProfile fa-camera" type="file" accept="image/*" id="file">
             </div>
             </div>
             <h1 class="title has-text-centered has-text-grey-lighter title is-8" id="nameProfile">
