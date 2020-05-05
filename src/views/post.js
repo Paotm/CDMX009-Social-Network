@@ -8,19 +8,18 @@ export function renderPostView() {
   const posts =
     `<section id="container">
     <div class="container has-text-white">
-      <h1> Escribe tu microcuento:</h1>
-      <h1>Titulo:</h1>
-      <input id="title" class="input is-success" type="text" placeholder="Título">
-      <textarea id="body" class="textarea is-success is-large" type="text" placeholder="Escribe acá tu cuento"></textarea>
+      <h1 class="title has-text-centered has-text-grey-lighter title is-4"> 
+      Escribe tu microcuento:
+      </h1>
+      <input id="title" class="input is-success is-medium  has-text-centered" type="text" placeholder="Título">
+      <textarea id="body" class="textarea is-success is-medium  has-text-centered" type="text" placeholder="Escribe acá tu cuento"></textarea>
       <div class="field is-horizontal">
-        <label class="label has-text-white">Autor:</label>
-      <div class="field-body">
-        <input class="input is-static has-text-white" type="text" value="User.name" readonly>
-        </div>
+        
+     
     
         <div class="file is-primary is-centered">
           <label class="file-label">
-            <input id="file" class="file-input" type="file" accept = "image/*" name="resume">
+            <input id="file" class="file-input is-rounded" type="file" accept = "image/*" name="resume">
             <span class="file-cta">
               <span class="file-icon">
                 <i class="fas fa-upload"></i>
@@ -31,7 +30,11 @@ export function renderPostView() {
             </span>
           </label>
         </div>
-    <button id="newPost" class="button  is-fullwidth is-primary is-large">Publicar</button>
+        <div class= "centerItem">
+    <button id="newPost" class="button is-rounded is-fullwidth  is-primary is-large ">
+    Publicar
+    </button>
+    </div>
     <section id="putPosts" class="sectionPosts"></section>
     </section>
     
@@ -180,17 +183,17 @@ function addPostBD(post) {
 //Muestra los posts en tiempo real
 function showPosts(sectionPosts) {
 
-  firebase.firestore().collection("postsList").orderBy("date", "desc").onSnapshot(snap => { 
+  firebase.firestore().collection("postsList").orderBy("date","desc").onSnapshot(snap => { 
     clean(sectionPosts)
     snap.forEach(doc => {
       console.log(doc.data());
 
       if (doc.data().img === undefined && doc.data().photo != undefined) {
         let renderPosts = `<div class="postContent" dataid="${doc.id}">
-        <a href="#" class="editPost"> <i class="fas fa-pencil-alt"></i></a>
-        <img max- width="70" class="imgUserPost" src="${doc.data().photo}"/><p> ${doc.data().user}</p>
-      <p>${doc.data().title}</p>
-      <p>${doc.data().text}</p>
+      <img max- width="70" class="imgUserPost" src="${doc.data().photo}"/>
+      <p class="subtitle is-6 des"> ${doc.data().user}</p>
+      <p class="subtitle is-3 des">${doc.data().title}</p>
+      <p class="subtitle is-5 des">${doc.data().text}</p>
       <div class="contentLikes">
       <a href="#" dataid="${doc.id}" class="likes btnLike"><i class="fas fa-heart"></i></a>
       <div class="resultCounter counter">${doc.data().likes}</div>
@@ -203,11 +206,11 @@ function showPosts(sectionPosts) {
 
       } if (doc.data().img != undefined && doc.data().photo != undefined) {
         let renderPosts = `<div class="postContent" dataid="${doc.id}">
-        <a href="#" class="editPost"> <i class="fas fa-pencil-alt"></i></a>
-        <img max- width="70" class="imgUserPost" src="${doc.data().photo}"/><p> ${doc.data().user}</p>
-      <p>Titulo:${doc.data().title}</p>
-      <p>${doc.data().text}</p>
-      <img max- width="200" src="${doc.data().img}" />
+               <img max- width="70" class="imgUserPost" src="${doc.data().photo}"/>
+      <p class="subtitle is-6 des"> ${doc.data().user}</p>
+      <p class="subtitle is-3 des">${doc.data().title}</p>
+      <p class="subtitle is-5 des">${doc.data().text}</p>
+      <img max- width="100%" src="${doc.data().img}" />
       <div class="contentLikes">
       <a href="#" dataid="${doc.id}" class="likes btnLike "><i class="fas fa-heart"></i></a>
       <div class="resultCounter counter">${doc.data().likes}</div>
