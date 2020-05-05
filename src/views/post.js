@@ -180,7 +180,7 @@ function addPostBD(post) {
 //Muestra los posts en tiempo real
 function showPosts(sectionPosts) {
 
-  firebase.firestore().collection("postsList").onSnapshot(snap => {
+  firebase.firestore().collection("postsList").orderBy("date", "desc").onSnapshot(snap => { 
     clean(sectionPosts)
     snap.forEach(doc => {
       console.log(doc.data());

@@ -73,26 +73,51 @@ export function renderProfileView(myData) {
   if (myData) {
     const profile =
       `
-      <button class = "button is-rounded btnIcon" id="editProfile" ><span class="icon is-small"><i class="fas fa-pencil-alt"></i></span></button>
-      <h1 class="title has-text-centered has-text-grey-lighter title is-5">Mi perfil</h1>
-      <figure class='image container is-128x128'>
-      <div id="changeImage"><img id="thisPhoto" src="${myData.photo}" class="is-rounded"></div>
-      </figure>
-      <div id="photoProfile"></div>
-        <input class = "ocultEditProfile fileInput" type="file" accept="image/*" id="file">
+  
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+          <div class="profile">
+            <div id="changeImage">
+              <figure class='image container is-128x128'>
+                <img id="thisPhoto" src="${myData.photo}" class="is-rounded">
+              </figure>
+            </div>
+            <div class= "centerItem">   
+            <div id="photoProfile">
+            <input class = "ocultEditProfile fa-camera" type="file" accept="image/*" id="file">
+            </div>
+            </div>
+            <h1 class="title has-text-centered has-text-grey-lighter title is-8" id="nameProfile">
+            ${myData.name}
+            </h1>
+            </div>
+            <h2 class="title has-text-centered has-text-grey-lighter title is-4" id="emailProfile">
+            ${myData.email}
+            </h2>
+ 
+            <div class= "centerItem" id="interest">${myData.interests}</div>
 
-      <h1 class="title has-text-centered has-text-grey-lighter title is-7" id="nameProfile">${myData.name}</h1>
- <h2 class="title has-text-centered has-text-grey-lighter title is-4" id="emailProfile">${myData.email}</h2>
-    <div class="centerIndepent">
-      <div id="interest">${myData.interests}</div>
-      <div>
-        <textarea class = "ocultEditProfile textareaInterest" id="interestsProfile" maxlength="200" placeholder="${myData.interests}">${myData.interests}</textarea>
+            <div class= "centerItem">
+                <button class = "button is-rounded btnIcon  is-outlined is-primary" id="editProfile" >
+                <span class="icon is-small"><i class="fas fa-pencil-alt"></i></span></button>
+            </div>
+            <div class= "centerItem">
+              <textarea class = "textarea is-primary ocultEditProfile subtitle is-6" rows="2" placeholder="***Bio*** / ¿De qué forma participarás? ¿Eres escritor?, ¿Ilustrador? o Ambos"  id="interestsProfile" maxlength="200">${myData.interests}</textarea>
+            </div>
+            <div class= "centerItem">
+              <button class = "button is-rounded  is-outlined is-primary btnIcon ocultEditProfile" id="saveProfile" >Guardar</button>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <button class = "button is-rounded btnIcon ocultEditProfile saveBtn" id="saveProfile" >Guardar</button>
     </div>
-    
-    
+  </div>
+ </div>
+</section>
+  
+
     <div class="modal" id="saveChange">
     <div class="modal-background"></div>
     <div class="modal-content">
@@ -104,7 +129,7 @@ export function renderProfileView(myData) {
     </div>
 </div>
 `
-    navBar.style.display = 'block'
+  navBar.style.display = 'block'
     return profile
   }
 
