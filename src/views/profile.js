@@ -37,7 +37,9 @@ export function renderProfileView(myData) {
               </figure>
             </div>
             <div class= "centerItem">   
-              <input class = "ocultEditProfile" type="file" accept="image/*" id="file">
+            <div id="photoProfile">
+            <input class = "ocultEditProfile" type="file" accept="image/*" id="file">
+            </div>
             </div>
             <h1 class="title has-text-centered has-text-grey-lighter title is-8" id="nameProfile">
             ${myData.name}
@@ -54,7 +56,7 @@ export function renderProfileView(myData) {
                 <span class="icon is-small"><i class="fas fa-pencil-alt"></i></span></button>
             </div>
             <div class= "centerItem">
-              <textarea class = "textarea is-primary ocultEditProfile subtitle is-6" rows="2" placeholder="***Bio*** / ¿De qué forma participarás? ¿Eres escritor?, ¿Ilustrador? o Ambos"  id="interestsProfile" maxlength="200"></textarea>
+              <textarea class = "textarea is-primary ocultEditProfile subtitle is-6" rows="2" placeholder="***Bio*** / ¿De qué forma participarás? ¿Eres escritor?, ¿Ilustrador? o Ambos"  id="interestsProfile" maxlength="200">${myData.interests}</textarea>
             </div>
             <div class= "centerItem">
               <button class = "button is-rounded  is-outlined is-primary btnIcon ocultEditProfile" id="saveProfile" >Guardar</button>
