@@ -7,11 +7,11 @@ import { renderExitView } from "./views/exit.js"
 import login from "./views/login.js"
 import signIn from "./views/signIn.js"
 import principal from "./views/principal.js"
-import { loginGoogle } from '/index.js'// Se importa para usar addEventListener
-import { loginFacebook } from '/index.js'
-import { createUser } from '/index.js'
-import { loginUser } from '/index.js'
-import { signoutUser } from '/index.js'
+import { loginGoogle } from './index.js'// Se importa para usar addEventListener
+import { loginFacebook } from './index.js'
+import { createUser } from './index.js'
+import { loginUser } from './index.js'
+import { signoutUser } from './index.js'
 
 
 // Nodos
